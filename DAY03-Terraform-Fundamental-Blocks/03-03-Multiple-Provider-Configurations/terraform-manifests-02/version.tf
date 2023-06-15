@@ -13,7 +13,7 @@ provider "azurerm" {
 provider "azurerm" {
   features {
     virtual_machine {
-      delete_os_disk_on_deletion     = false
+      delete_os_disk_on_deletion  = false
     }
   }
   alias = "delete_vm_disk"

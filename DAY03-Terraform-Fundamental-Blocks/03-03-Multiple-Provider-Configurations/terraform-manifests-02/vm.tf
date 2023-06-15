@@ -8,11 +8,13 @@ resource "tls_private_key" "example_ssh" {
 
 # Create virtual machine
 resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
-    provider = azurerm.delete_vm_disk
+
+  provider = azurerm.delete_vm_disk
+  
   name                  = "terraform-vm-delete-disk"
   location              = "eastus"
-  resource_group_name   = "terraform-rg-01"
-  network_interface_ids = ["/subscriptions/f154a823-7b49-4f69-a16a-5caf74c6b35a/resourceGroups/terraform-rg-01/providers/Microsoft.Network/networkInterfaces/terra-nw-interface"]
+  resource_group_name   = "terraform-rg"
+  network_interface_ids = ["/subscriptions/f154a823-7b49-4f69-a16a-5caf74c6b35a/resourceGroups/terraform-rg/providers/Microsoft.Network/networkInterfaces/terraform-nw-interface"]
   size                  = "Standard_DS1_v2"
 
   os_disk {
@@ -46,8 +48,8 @@ resource "azurerm_linux_virtual_machine" "my_terraform_vm" {
 resource "azurerm_linux_virtual_machine" "my_terraform_vm_default" {
   name                  = "terraform-vm-default"
   location              = "eastus"
-  resource_group_name   = "terraform-rg-01"
-  network_interface_ids = ["/subscriptions/f154a823-7b49-4f69-a16a-5caf74c6b35a/resourceGroups/terraform-rg-01/providers/Microsoft.Network/networkInterfaces/nw-02"]
+  resource_group_name   = "terraform-rg"
+  network_interface_ids = ["/subscriptions/f154a823-7b49-4f69-a16a-5caf74c6b35a/resourceGroups/terraform-rg/providers/Microsoft.Network/networkInterfaces/nw-02"]
   size                  = "Standard_DS1_v2"
 
   os_disk {
