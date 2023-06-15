@@ -39,7 +39,8 @@ resource "aws_instance" "ec2demo" { # BLOCK
   - List -> [……] (more than one value)
     - Example, network_interface_ids = [“nw1”,”nw2”,”nw3”]
   - Map -> {……} (more than one key value pair )
-    ```Example, tags = {
+    ```
+    Example, tags = {
 		“env” = “Dev”
 		“app_id” = “232423”
 	              }
@@ -51,11 +52,6 @@ resource "aws_instance" "ec2demo" { # BLOCK
 		     caching = "ReadWrite"
 		      }
     ```
-
-
-
-
-
 
 ## Step-03: Understand about Arguments, Attributes and Meta-Arguments.
 - Arguments can be `required` or `optional`
