@@ -16,6 +16,7 @@ provider "azurerm" {
       delete_os_disk_on_deletion  = false
     }
   }
+
   alias = "delete_vm_disk"
 
 }
