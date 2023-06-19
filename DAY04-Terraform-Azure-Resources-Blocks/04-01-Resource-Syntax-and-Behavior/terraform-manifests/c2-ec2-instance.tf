@@ -1,6 +1,11 @@
 # Create EC2 Instance
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
 
+
+resource "aws_sns_topic" "user_updates" {
+  name = "user-updates-topic"
+}
+
 resource "aws_instance" "my-ec2-vm" {
   ami               = "ami-047a51fa27710816e"
   instance_type     = "t2.micro"
@@ -11,4 +16,3 @@ resource "aws_instance" "my-ec2-vm" {
     "tag1" = "Update-test-1"    
   }
 }
-
