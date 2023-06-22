@@ -2,8 +2,9 @@
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance
 
 
-resource "aws_sns_topic" "user_updates" {
-  name = "user-updates-topic"
+resource "aws_sns_topic" "suresh" {
+  name = "user-updates-topic.fifo"
+  fifo_topic = true
 }
 
 resource "aws_instance" "my-ec2-vm" {
@@ -16,3 +17,4 @@ resource "aws_instance" "my-ec2-vm" {
     "tag1" = "Update-test-1"    
   }
 }
+
